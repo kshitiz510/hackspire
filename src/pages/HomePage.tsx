@@ -6,10 +6,16 @@ import SponsorsSection from "../components/sections/SponsorsSection";
 import TimelineSection from "../components/sections/TimelineSection";
 import Footer from "../components/common/Footer";
 import FAQsSection from "../components/sections/FAQsSection";
+import mergedBg from "../assets/merged-bg.png";
 
 const HomePage = () => {
   return (
-    <div className="bg-[url('./src/assets/merged-bg.png')] bg-repeat bg-black min-h-screen">
+    <div
+      className="bg-repeat bg-black min-h-screen"
+      style={{
+        backgroundImage: `url(${mergedBg})`,
+      }}
+    >
       <Navbar />
       <section id="hero">
         <HeroSection />
