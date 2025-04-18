@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import boardPinImage from "../../assets/board-pin.svg"; 
+import boardPinImage from "../../assets/board-pin.svg";
 import parchmentImage from "../../assets/paper-parchment.png";
 
 interface PaperParchmentProps {
@@ -11,6 +11,8 @@ interface PaperParchmentProps {
   height?: string; // Optional height of the parchment
   padding?: string; // Optional padding inside the parchment
   marginTop?: string; // Optional margin for top position
+  showBoardPin?: boolean; // New prop to control board pin rendering
+  boardPinPosition?: { top: string; left: string }; // Optional position for the board pin
 }
 
 const PaperParchment: React.FC<PaperParchmentProps> = ({
@@ -22,6 +24,8 @@ const PaperParchment: React.FC<PaperParchmentProps> = ({
   height = "800px", // Default height
   padding = "16px", // Default padding
   marginTop = "0", // Default marginTop
+  showBoardPin = true, // Default to showing the board pin
+  boardPinPosition = { top: "100px", left: "14px" }, // Default board pin position
 }) => {
   return (
     <div
@@ -34,12 +38,18 @@ const PaperParchment: React.FC<PaperParchmentProps> = ({
         marginTop: marginTop,
       }}
     >
-      {/* Board Pin */}
-      <img
-        src={boardPinImage}
-        alt="Board Pin"
-        className="absolute top-[40px] left-14 transform -translate-x-1/2 w-16 h-16" 
-      />
+      {/* Conditionally Render Board Pin */}
+      {showBoardPin && (
+        <img
+          src={boardPinImage}
+          alt="Board Pin"
+          className="absolute transform -translate-x-14 md:-translate-x-1/3 w-20 h-20 md:w-24 md:h-24"
+          style={{
+            top: boardPinPosition.top,
+            left: boardPinPosition.left,
+          }}
+        />
+      )}
 
       {/* Title */}
       <h2

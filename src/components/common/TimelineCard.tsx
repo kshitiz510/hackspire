@@ -33,7 +33,7 @@ const TimelineCard: React.FC<TimelineCardProps> = ({
         <img
           src={boardPinImage}
           alt="Pin"
-          className="absolute top-[-28px] left-6 transform -translate-x-1/2 w-14 h-14 z-10"
+          className="absolute top-[-28px] left-[45%] transform -translate-x-1/2 w-14 h-14 z-10"
         />
 
         {/* Card Content */}

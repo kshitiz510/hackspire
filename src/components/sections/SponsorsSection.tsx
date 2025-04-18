@@ -7,7 +7,56 @@ interface SponsorProps {
   url: string;
 }
 
-const sponsors: SponsorProps[] = [];
+const sponsors: SponsorProps[] = [
+  {
+    id: "1",
+    name: "Sponsor 1",
+    logo: "https://via.placeholder.com/150",
+    url: "#",
+  },
+  {
+    id: "2",
+    name: "Sponsor 2",
+    logo: "https://via.placeholder.com/150",
+    url: "#",
+  },
+  {
+    id: "3",
+    name: "Sponsor 3",
+    logo: "https://via.placeholder.com/150",
+    url: "#",
+  },
+  {
+    id: "4",
+    name: "Sponsor 4",
+    logo: "https://via.placeholder.com/150",
+    url: "#",
+  },
+  {
+    id: "5",
+    name: "Sponsor 5",
+    logo: "https://via.placeholder.com/150",
+    url: "#",
+  },
+  {
+    id: "6",
+    name: "Sponsor 6",
+    logo: "https://via.placeholder.com/150",
+    url: "#",
+  },
+  {
+    id: "7",
+    name: "Sponsor 7",
+    logo: "https://via.placeholder.com/150",
+    url: "#",
+  },
+  {
+    id: "8",
+    name: "Sponsor 8",
+    logo: "https://via.placeholder.com/150",
+    url: "#",
+  },
+];
 
 const SponsorBox: React.FC<{ sponsor?: SponsorProps }> = ({ sponsor }) => {
   return (
@@ -42,10 +91,10 @@ const SponsorsSection: React.FC = () => {
   return (
     <section className="relative flex flex-col items-center justify-center py-16 px-4 text-white">
       {/* Title */}
-      <h2 className="text-6xl md:text-7xl mb-16 font-coalition text-[#ffeed7]">SPONSORS</h2>
+      <h2 className="text-5xl md:text-6xl mb-16 font-coalition text-[#ffeed7]">SPONSORS</h2>
 
       {/* Sponsors Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-12 w-full max-w-7xl">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-6xl">
         {renderSponsorBoxes(8)}
       </div>
     </section>
