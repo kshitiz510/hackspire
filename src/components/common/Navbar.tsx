@@ -143,7 +143,7 @@ const Navbar = () => {
                   className="block py-[6px] hover:text-white transition cursor-pointer"
                   onClick={() => {
                     handleLinkClick(); // Ensure navbar stays visible on link click
-                    setIsMenuOpen(false); // Close the mobile menu
+                    setTimeout(() => setIsMenuOpen(false), 500); // Close the mobile menu after scrolling
                   }}
                 >
                   {id === "faqs" ? "FAQs" : id.charAt(0).toUpperCase() + id.slice(1)}
