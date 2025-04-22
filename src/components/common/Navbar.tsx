@@ -6,14 +6,11 @@ import mlscLogo from "../../assets/mlsc-logo.png";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [isVisible, setIsVisible] = useState(true); // Track navbar visibility
-  const [lastScrollY, setLastScrollY] = useState(0); // Track last scroll position
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
-  // Check if the screen is mobile
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
@@ -23,22 +20,19 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Handle navbar visibility on scroll
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-
+  
       if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        // Scrolling down and past 50px
-        setIsVisible(false);
+        setIsVisible(false); // Hide on scroll down
       } else {
-        // Scrolling up
-        setIsVisible(true);
+        setIsVisible(true); // Show on scroll up
       }
-
+  
       setLastScrollY(currentScrollY);
     };
-
+  
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
@@ -47,42 +41,41 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 mx-4 sm:mx-16 mt-8 rounded-[18px] p-[3px] bg-gradient-to-r from-[#B3A790] to-[#4a453e] backdrop-blur-md bg-opacity-20 transition-opacity duration-300 ${
-        isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
+      className={`fixed top-0 left-0 right-0 z-50 mx-4 sm:mx-16 mt-8 rounded-[18px] p-[3px] bg-gradient-to-r from-[#B3A790] to-[#4a453e] transition-opacity duration-300 ${
+        isVisible ? "opacity-100" : "opacity-0"
       }`}
     >
       <div className="bg-black bg-opacity-80 backdrop-blur-md text-[#B3A790] rounded-[17px] font-courier">
         <div className="container mx-auto flex items-center justify-between py-2 pl-4 pr-2">
-          {/* Logos */}
-          <div className="flex items-center space-x-2">
-            <Link
-              to="hero" // ID of the hero section
-              smooth={true}
-              duration={400} // Increased duration for smoother scrolling
-              offset={-70} // Adjust offset if needed
-              className="cursor-pointer"
-            >
-              <img src={acmLogo} alt="ACM" className="h-11 w-auto" />
-            </Link>
-            <Link
-              to="hero" // ID of the hero section
-              smooth={true}
-              duration={400} // Increased duration for smoother scrolling
-              offset={-70} // Adjust offset if needed
-              className="cursor-pointer"
-            >
-              <img src={mlscLogo} alt="MLSC" className="h-11 w-auto" />
-            </Link>
+          <div className="flex items-center space-x-1">
+            {[acmLogo, mlscLogo].map((logo, index) => (
+              <Link
+                key={index}
+                to="hero"
+                smooth={true}
+                duration={400}
+                offset={-70}
+                spy={true}
+                className="cursor-pointer"
+              >
+                <img
+                  src={logo}
+                  alt={`Logo ${index}`}
+                  className="h-8 w-auto md:h-11"
+                />
+              </Link>
+            ))}
           </div>
 
-          {/* Desktop Links */}
+          {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8 text-[21px]">
             {navItems.map((id) => (
               <Link
                 key={id}
                 to={id}
-                smooth={true} // Enable smooth scrolling
-                duration={400} // Increased duration for smoother scrolling
+                smooth={true}
+                spy={true}
+                duration={400}
                 offset={id === "timeline" && isMobile ? -120 : -70}
                 className="hover:text-white transition cursor-pointer"
               >
@@ -99,7 +92,7 @@ const Navbar = () => {
             </a>
           </div>
 
-          {/* Mobile Menu Toggle */}
+          {/* Hamburger */}
           <div
             className="md:hidden mr-4 flex flex-col justify-center items-center cursor-pointer space-y-1 relative w-8 h-8"
             onClick={toggleMenu}
@@ -122,7 +115,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Nav */}
         <div
           className={`md:hidden rounded-b-[18px] overflow-hidden transition-all duration-500 ease-in-out bg-[#252525] ${
             isMenuOpen ? "max-h-[500px] pb-2" : "max-h-0"
@@ -138,11 +131,12 @@ const Navbar = () => {
               >
                 <Link
                   to={id}
-                  smooth={true} // Enable smooth scrolling
-                  duration={400} // Increased duration for smoother scrolling
+                  smooth={true}
+                  spy={true}
+                  duration={400}
                   offset={id === "timeline" && isMobile ? -120 : -70}
                   className="block py-[6px] hover:text-white transition cursor-pointer"
-                  onClick={() => setTimeout(() => setIsMenuOpen(false), 300)} // Close menu after scrolling
+                  onClick={() => setTimeout(() => setIsMenuOpen(false), 300)}
                 >
                   {id === "faqs" ? "FAQs" : id.charAt(0).toUpperCase() + id.slice(1)}
                 </Link>
