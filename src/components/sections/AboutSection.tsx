@@ -28,10 +28,7 @@ const AboutSection: React.FC = () => {
           boardPinPosition={boardPinPosition} // Pass both mobile and desktop positions
         >
           <p className="text-sm md:text-2xl leading-tight text-black ml-6 px-2 py-6 md:px-16 mt-5 md:mt-16 font-courier">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam nisi officia doloremque
-            minus amet assumenda odio, porro dolor nihil aspernatur suscipit beatae veritatis totam
-            placeat quas, rerum ex natus provident, id eligendi. Autem aspernatur eius blanditiis
-            modi culpa, sint odio quasi iure nihil perferendis.
+          Hackspire is a 24-hour hackathon by ACM TIET and MLSC, bringing innovators together to solve real-world problems. With expert mentorship, hands-on experience, and vibrant competition, it's a platform where creativity meets tech—fueling future trailblazers and change-makers.
           </p>
         </PaperParchment>
       </div>

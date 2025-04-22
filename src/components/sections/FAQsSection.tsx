@@ -6,24 +6,39 @@ const FAQsSection: React.FC = () => {
 
   const faqs = [
     {
-      question: "What is a Hackathon?",
+      question: "Who can participate in Hackspire?",
       answer:
-        "A hackathon is an event where programmers, designers, and developers collaborate intensively on software projects.",
+        "Hackspire is open to all college students, regardless of their branch or year of study. Whether you're a beginner or an experienced coder, you're welcome to participate. We highly encourage beginners to join and explore the world of hackathons with the guidance of mentors and peers.",
     },
     {
-      question: "Who can participate?",
+      question: "What is the team size?",
       answer:
-        "Anyone with a passion for technology and innovation can participate, including students and professionals.",
+        "Participants can register in teams of 2 to 5 members. Collaborating in a team allows you to brainstorm ideas, divide tasks, and build innovative projects together.",
+    },
+    {
+      question: "Do I need prior hackathon experience?",
+      answer:
+        "Not at all! Hackspire is designed to be beginner-friendly. We provide mentorship throughout the event to help you with your project. Whether you're a first-timer or a seasoned hacker, Hackspire is the perfect platform to learn, innovate, and grow.",
     },
     {
       question: "What should I bring?",
       answer:
-        "Bring your laptop, chargers, and any other tools you need for development. Snacks and enthusiasm are also welcome!",
+        "You should bring your laptop, chargers, a valid college ID, and any personal essentials you may need during the event. We’ll provide meals and overnight accommodation for all registered participants, so you can focus entirely on your project.",
     },
     {
-      question: "Are there any prizes?",
+      question: "What are the judging criteria?",
       answer:
-        "Yes, there are exciting prizes for the winners, along with networking opportunities and learning experiences.",
+        "Projects will be judged on innovation, technical complexity, feasibility, and impact. Focus on creating a unique, technically advanced, and practical solution that effectively addresses the problem.",
+    },
+    {
+      question: "Are there prizes?",
+      answer:
+        "Absolutely! Hackspire offers exciting prizes for the top teams, including cash rewards, exclusive swag, and certificates of recognition. Additionally, participants will have the opportunity to network with industry professionals and showcase their skills.",
+    },
+    {
+      question: "How do I register?",
+      answer:
+        "You can register through Devfolio, our official registration platform. Simply visit the Hackspire page on Devfolio, create an account (if you don’t already have one), and complete the registration process. Stay tuned to our social media channels for updates on deadlines and other important announcements.",
     },
   ];
 

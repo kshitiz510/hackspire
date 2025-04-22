@@ -1,19 +1,15 @@
 import React from "react";
 import rightImage from "../../assets/footer-image.png";
-import eclipseLogo from "../../assets/eclipse-logo.svg";
 import acmLogo from "../../assets/acm-logo.png";
+import mlscLogo from "../../assets/mlsc-logo.png";
 import paperBg from "../../assets/paper-bg.png";
 
 const Footer: React.FC = () => {
   return (
     <div
-      className="relative w-full rounded-t-3xl md:rounded-t-[52px] overflow-x-hidden z-10"
+      className="relative w-full rounded-t-3xl md:rounded-t-[52px] overflow-x-hidden z-10 bg-cover bg-center"
       style={{
         backgroundImage: `url(${paperBg})`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        minHeight: "300px",
       }}
     >
       {/* Left Image */}
@@ -31,26 +27,27 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Center Content */}
-      <div className="relative z-30 flex flex-col items-center justify-end h-full py-10 md:py-14 text-black">
-        <div className="space-y-2 mb-4">
-          <img
-            src={eclipseLogo}
-            alt="Eclipse Logo"
-            className="mx-auto w-[200px] md:w-[300px]"
-          />
+      <div className="relative z-30 flex flex-col justify-between items-center min-h-[200px] md:min-h-[400px] py-10 md:py-14 text-black">
+        {/* Logos */}
+        <div className="flex items-center justify-center gap-2 mb-6">
           <img
             src={acmLogo}
             alt="ACM Logo"
-            className="mx-auto w-[125px] md:w-[175px]"
+            className="w-[150px] md:w-[190px]"
+          />
+          <img
+            src={mlscLogo}
+            alt="MLSC Logo"
+            className="w-[60px] md:w-[80px]"
           />
         </div>
 
         {/* Social Icons */}
-        <div className="flex justify-center gap-6 md:gap-9 text-3xl md:text-4xl mb-4">
-          <a href="#" aria-label="Instagram">
+        <div className="flex justify-center gap-6 md:gap-8 text-3xl md:text-4xl mb-6">
+          <a href="https://www.instagram.com/acmthapar/" aria-label="Instagram">
             <i className="fab fa-instagram"></i>
           </a>
-          <a href="#" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/company/thapar-acm-student-chapter/" aria-label="LinkedIn">
             <i className="fab fa-linkedin-in"></i>
           </a>
           <a href="#" aria-label="Phone">
@@ -61,10 +58,11 @@ const Footer: React.FC = () => {
           </a>
         </div>
 
-        <p className="text-sm md:text-md font-semibold text-center mt-6 md:mt-8">
+        {/* Footer Text */}
+        <p className="text-sm md:text-md font-semibold text-center mt-auto">
           Made with ❤️ by ACM
           <br />
-          Eclipse 5.0 ALL Rights Reserved
+          Hackspire 1.0 ALL Rights Reserved
         </p>
       </div>
     </div>

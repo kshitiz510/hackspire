@@ -8,7 +8,6 @@ const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isVisible, setIsVisible] = useState(true); // Track navbar visibility
   const [lastScrollY, setLastScrollY] = useState(0); // Track last scroll position
-  const [isProgrammaticScroll, setIsProgrammaticScroll] = useState(false); // Track programmatic scrolling
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -27,8 +26,6 @@ const Navbar = () => {
   // Handle navbar visibility on scroll
   useEffect(() => {
     const handleScroll = () => {
-      if (isProgrammaticScroll) return; // Ignore programmatic scrolling
-
       const currentScrollY = window.scrollY;
 
       if (currentScrollY > lastScrollY && currentScrollY > 50) {
@@ -44,18 +41,7 @@ const Navbar = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY, isProgrammaticScroll]);
-
-  const handleLinkClick = () => {
-    setIsVisible(true); // Ensure the navbar is visible
-    setLastScrollY(window.scrollY); // Reset the last scroll position
-    setIsProgrammaticScroll(true); // Temporarily disable scroll listener
-
-    // Re-enable scroll listener after a short delay
-    setTimeout(() => {
-      setIsProgrammaticScroll(false);
-    }, 500); // Adjust delay based on scroll duration
-  };
+  }, [lastScrollY]);
 
   const navItems = ["about", "timeline", "tracks", "sponsors", "faqs"];
 
@@ -72,7 +58,7 @@ const Navbar = () => {
             <Link
               to="hero" // ID of the hero section
               smooth={true}
-              duration={300}
+              duration={400} // Increased duration for smoother scrolling
               offset={-70} // Adjust offset if needed
               className="cursor-pointer"
             >
@@ -81,7 +67,7 @@ const Navbar = () => {
             <Link
               to="hero" // ID of the hero section
               smooth={true}
-              duration={300}
+              duration={400} // Increased duration for smoother scrolling
               offset={-70} // Adjust offset if needed
               className="cursor-pointer"
             >
@@ -96,10 +82,9 @@ const Navbar = () => {
                 key={id}
                 to={id}
                 smooth={true} // Enable smooth scrolling
-                duration={300} // Reduce duration for faster scrolling
+                duration={400} // Increased duration for smoother scrolling
                 offset={id === "timeline" && isMobile ? -120 : -70}
                 className="hover:text-white transition cursor-pointer"
-                onClick={handleLinkClick} // Ensure navbar stays visible on link click
               >
                 {id === "faqs" ? "FAQs" : id.charAt(0).toUpperCase() + id.slice(1)}
               </Link>
@@ -154,13 +139,10 @@ const Navbar = () => {
                 <Link
                   to={id}
                   smooth={true} // Enable smooth scrolling
-                  duration={300} // Reduce duration for faster scrolling
+                  duration={400} // Increased duration for smoother scrolling
                   offset={id === "timeline" && isMobile ? -120 : -70}
                   className="block py-[6px] hover:text-white transition cursor-pointer"
-                  onClick={() => {
-                    handleLinkClick(); // Ensure navbar stays visible on link click
-                    setTimeout(() => setIsMenuOpen(false), 500); // Close the mobile menu after scrolling
-                  }}
+                  onClick={() => setTimeout(() => setIsMenuOpen(false), 300)} // Close menu after scrolling
                 >
                   {id === "faqs" ? "FAQs" : id.charAt(0).toUpperCase() + id.slice(1)}
                 </Link>
