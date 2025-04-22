@@ -68,9 +68,25 @@ const Navbar = () => {
       <div className="bg-black bg-opacity-80 backdrop-blur-md text-[#B3A790] rounded-[17px] font-courier">
         <div className="container mx-auto flex items-center justify-between py-2 pl-4 pr-2">
           {/* Logos */}
-          <div className="flex items-center space-x-4">
-            <img src={mlscLogo} alt="MLSC" className="h-11 w-auto" />
-            <img src={acmLogo} alt="ACM" className="h-11 w-auto" />
+          <div className="flex items-center space-x-2">
+            <Link
+              to="hero" // ID of the hero section
+              smooth={true}
+              duration={300}
+              offset={-70} // Adjust offset if needed
+              className="cursor-pointer"
+            >
+              <img src={acmLogo} alt="ACM" className="h-11 w-auto" />
+            </Link>
+            <Link
+              to="hero" // ID of the hero section
+              smooth={true}
+              duration={300}
+              offset={-70} // Adjust offset if needed
+              className="cursor-pointer"
+            >
+              <img src={mlscLogo} alt="MLSC" className="h-11 w-auto" />
+            </Link>
           </div>
 
           {/* Desktop Links */}
@@ -79,8 +95,8 @@ const Navbar = () => {
               <Link
                 key={id}
                 to={id}
-                smooth={true}
-                duration={500}
+                smooth={true} // Enable smooth scrolling
+                duration={300} // Reduce duration for faster scrolling
                 offset={id === "timeline" && isMobile ? -120 : -70}
                 className="hover:text-white transition cursor-pointer"
                 onClick={handleLinkClick} // Ensure navbar stays visible on link click
@@ -137,8 +153,8 @@ const Navbar = () => {
               >
                 <Link
                   to={id}
-                  smooth={true}
-                  duration={500}
+                  smooth={true} // Enable smooth scrolling
+                  duration={300} // Reduce duration for faster scrolling
                   offset={id === "timeline" && isMobile ? -120 : -70}
                   className="block py-[6px] hover:text-white transition cursor-pointer"
                   onClick={() => {

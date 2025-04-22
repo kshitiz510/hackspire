@@ -12,7 +12,10 @@ interface PaperParchmentProps {
   padding?: string; // Optional padding inside the parchment
   marginTop?: string; // Optional margin for top position
   showBoardPin?: boolean; // New prop to control board pin rendering
-  boardPinPosition?: { top: string; left: string }; // Optional position for the board pin
+  boardPinPosition?: {
+    mobile: { top: string; left: string }; // Position for mobile
+    desktop: { top: string; left: string }; // Position for desktop
+  };
 }
 
 const PaperParchment: React.FC<PaperParchmentProps> = ({
@@ -25,7 +28,10 @@ const PaperParchment: React.FC<PaperParchmentProps> = ({
   padding = "16px", // Default padding
   marginTop = "0", // Default marginTop
   showBoardPin = true, // Default to showing the board pin
-  boardPinPosition = { top: "100px", left: "14px" }, // Default board pin position
+  boardPinPosition = {
+    mobile: { top: "32%", left: "6%" }, // Default position for mobile
+    desktop: { top: "100px", left: "14px" }, // Default position for desktop
+  },
 }) => {
   return (
     <div
@@ -43,10 +49,10 @@ const PaperParchment: React.FC<PaperParchmentProps> = ({
         <img
           src={boardPinImage}
           alt="Board Pin"
-          className="absolute transform -translate-x-14 md:-translate-x-1/3 w-20 h-20 md:w-24 md:h-24"
+          className="absolute transform w-20 h-20 md:w-24 md:h-24"
           style={{
-            top: boardPinPosition.top,
-            left: boardPinPosition.left,
+            top: window.innerWidth >= 768 ? boardPinPosition.desktop.top : boardPinPosition.mobile.top,
+            left: window.innerWidth >= 768 ? boardPinPosition.desktop.left : boardPinPosition.mobile.left,
           }}
         />
       )}
@@ -60,7 +66,9 @@ const PaperParchment: React.FC<PaperParchmentProps> = ({
       </h2>
 
       {/* Children / Description */}
-      {children}
+      <div className="flex flex-col justify-start items-center h-full pb-20 overflow-hidden">
+        {children}
+      </div>
     </div>
   );
 };

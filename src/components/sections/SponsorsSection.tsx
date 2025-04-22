@@ -1,4 +1,8 @@
 import React from "react";
+import devfolio from "../../assets/sponsors/devfolio.png";
+import polygon from "../../assets/sponsors/polygon.png";
+import codingMinutes from "../../assets/sponsors/coding-minutes.jpeg";
+import postman from "../../assets/sponsors/postman.webp";
 
 interface SponsorProps {
   id: string;
@@ -11,56 +15,32 @@ const sponsors: SponsorProps[] = [
   {
     id: "1",
     name: "Sponsor 1",
-    logo: "https://via.placeholder.com/150",
-    url: "#",
+    logo: polygon, // Imported logo
+    url: "https://sponsor1.com", // Add the sponsor's URL
   },
   {
     id: "2",
     name: "Sponsor 2",
-    logo: "https://via.placeholder.com/150",
-    url: "#",
+    logo: devfolio, // Imported logo
+    url: "https://sponsor2.com", // Add the sponsor's URL
   },
   {
     id: "3",
     name: "Sponsor 3",
-    logo: "https://via.placeholder.com/150",
-    url: "#",
+    logo: postman, // Imported logo
+    url: "https://sponsor3.com", // Add the sponsor's URL
   },
   {
     id: "4",
     name: "Sponsor 4",
-    logo: "https://via.placeholder.com/150",
-    url: "#",
-  },
-  {
-    id: "5",
-    name: "Sponsor 5",
-    logo: "https://via.placeholder.com/150",
-    url: "#",
-  },
-  {
-    id: "6",
-    name: "Sponsor 6",
-    logo: "https://via.placeholder.com/150",
-    url: "#",
-  },
-  {
-    id: "7",
-    name: "Sponsor 7",
-    logo: "https://via.placeholder.com/150",
-    url: "#",
-  },
-  {
-    id: "8",
-    name: "Sponsor 8",
-    logo: "https://via.placeholder.com/150",
-    url: "#",
+    logo: codingMinutes, // Imported logo
+    url: "https://sponsor4.com", // Add the sponsor's URL
   },
 ];
 
 const SponsorBox: React.FC<{ sponsor?: SponsorProps }> = ({ sponsor }) => {
   return (
-    <div className="border-4 border-[#B3A790] rounded-xl h-48 flex items-center justify-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-[0_0_20px_rgba(179,167,144,0.5)] cursor-pointer">
+    <div className="border-4 border-[#B3A790] rounded-2xl h-44 md:h-52 md:w-56 flex items-center justify-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-[0_0_20px_rgba(179,167,144,0.5)] cursor-pointer">
       {sponsor ? (
         <a
           href={sponsor.url}
@@ -71,7 +51,7 @@ const SponsorBox: React.FC<{ sponsor?: SponsorProps }> = ({ sponsor }) => {
           <img
             src={sponsor.logo}
             alt={sponsor.name}
-            className="max-h-32 max-w-full object-contain"
+            className="max-h-32 rounded-lg max-w-full object-contain"
           />
         </a>
       ) : (
@@ -89,13 +69,13 @@ const SponsorsSection: React.FC = () => {
   };
 
   return (
-    <section className="relative flex flex-col items-center justify-center py-16 px-4 text-white">
+    <section className="relative flex flex-col items-center justify-center py-16 px-6 text-white">
       {/* Title */}
       <h2 className="text-5xl md:text-6xl mb-16 font-coalition text-[#ffeed7]">SPONSORS</h2>
 
       {/* Sponsors Grid */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-6xl">
-        {renderSponsorBoxes(8)}
+        {renderSponsorBoxes(4)} {/* Render only 4 sponsor boxes */}
       </div>
     </section>
   );
