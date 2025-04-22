@@ -23,9 +23,10 @@ const AboutSection: React.FC = () => {
           height="700px" // Increased height for mobile
           padding="10px" // Adjusted padding
           marginTop="0px"
-          className="mx-auto"
+          className="mx-auto flex justify-end items-center flex-col"
           showBoardPin={true} // Control whether the board pin is shown
           boardPinPosition={boardPinPosition} // Pass both mobile and desktop positions
+
         >
           <p className="text-sm md:text-2xl leading-tight text-black ml-6 px-2 py-6 md:px-16 mt-5 md:mt-16 font-courier">
           Hackspire is a 24-hour hackathon by ACM TIET and MLSC, bringing innovators together to solve real-world problems. With expert mentorship, hands-on experience, and vibrant competition, it's a platform where creativity meets tech—fueling future trailblazers and change-makers.
