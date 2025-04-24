@@ -27,18 +27,18 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Center Content */}
-      <div className="relative z-30 flex flex-col justify-between items-center min-h-[200px] md:min-h-[400px] py-10 md:py-14 text-black">
+      <div className="relative z-30 flex flex-col justify-between items-center min-h-[200px] md:min-h-[400px] py-10 md:pt-36 text-black">
         {/* Logos */}
-        <div className="flex items-center justify-center gap-2 mb-6">
+        <div className="flex items-center justify-center gap-4 mb-6">
           <img
             src={acmLogo}
             alt="ACM Logo"
-            className="w-[150px] md:w-[190px]"
+            className="w-[75px] md:w-[110px]"
           />
           <img
             src={mlscLogo}
             alt="MLSC Logo"
-            className="w-[60px] md:w-[80px]"
+            className="w-[70px] md:w-[105px]"
           />
         </div>
 
@@ -59,11 +59,11 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Footer Text */}
-        <p className="text-sm md:text-md font-semibold text-center mt-auto">
+        {/* <p className="text-sm md:text-md font-semibold text-center mt-auto">
           Made with ❤️ by ACM
           <br />
           Hackspire 1.0 ALL Rights Reserved
-        </p>
+        </p> */}
       </div>
     </div>
   );
