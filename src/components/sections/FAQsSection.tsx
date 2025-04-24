@@ -6,41 +6,35 @@ const FAQsSection: React.FC = () => {
 
   const faqs = [
     {
-      question: "Who can participate in Hackspire?",
-      answer:
-        "Hackspire is open to all college students, regardless of their branch or year of study. Whether you're a beginner or an experienced coder, you're welcome to participate. We highly encourage beginners to join and explore the world of hackathons with the guidance of mentors and peers.",
+      "question": "Who can participate in Hackspire?",
+      "answer": "Hackspire is open to all college students, from any branch or year. Beginners are encouraged to join and explore with help from mentors and peers."
     },
     {
-      question: "What is the team size?",
-      answer:
-        "Participants can register in teams of 2 to 5 members. Collaborating in a team allows you to brainstorm ideas, divide tasks, and build innovative projects together.",
+      "question": "What is the team size?",
+      "answer": "Teams can have 2 to 5 members. Teamwork helps with idea sharing, task division, and collaborative project building."
     },
     {
-      question: "Do I need prior hackathon experience?",
-      answer:
-        "Not at all! Hackspire is designed to be beginner-friendly. We provide mentorship throughout the event to help you with your project. Whether you're a first-timer or a seasoned hacker, Hackspire is the perfect platform to learn, innovate, and grow.",
+      "question": "Do I need prior hackathon experience?",
+      "answer": "No experience needed! Hackspire is beginner-friendly and offers mentorship. Whether you're new or experienced, you'll learn and grow."
     },
     {
-      question: "What should I bring?",
-      answer:
-        "You should bring your laptop, chargers, a valid college ID, and any personal essentials you may need during the event. We’ll provide meals and overnight accommodation for all registered participants, so you can focus entirely on your project.",
+      "question": "What should I bring?",
+      "answer": "Bring your laptop, chargers, college ID, and essentials. We'll provide meals and overnight stay so you can focus on building."
     },
     {
-      question: "What are the judging criteria?",
-      answer:
-        "Projects will be judged on innovation, technical complexity, feasibility, and impact. Focus on creating a unique, technically advanced, and practical solution that effectively addresses the problem.",
+      "question": "What are the judging criteria?",
+      "answer": "Judging is based on innovation, technical complexity, feasibility, and impact. Build something unique, practical, and technically solid."
     },
     {
-      question: "Are there prizes?",
-      answer:
-        "Absolutely! Hackspire offers exciting prizes for the top teams, including cash rewards, exclusive swag, and certificates of recognition. Additionally, participants will have the opportunity to network with industry professionals and showcase their skills.",
+      "question": "Are there prizes?",
+      "answer": "Yes! Top teams get cash, swag, and certificates. You'll also connect with professionals and showcase your skills."
     },
     {
-      question: "How do I register?",
-      answer:
-        "You can register through Devfolio, our official registration platform. Simply visit the Hackspire page on Devfolio, create an account (if you don’t already have one), and complete the registration process. Stay tuned to our social media channels for updates on deadlines and other important announcements.",
-    },
-  ];
+      "question": "How do I register?",
+      "answer": "Register via Devfolio. Visit our page, sign in or create an account, and complete the form. Follow our socials for updates."
+    }
+  ]
+  
 
   const handleToggle = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
