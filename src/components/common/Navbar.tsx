@@ -46,8 +46,8 @@ const Navbar = () => {
       }`}
     >
       <div className="bg-black bg-opacity-80 backdrop-blur-md text-[#B3A790] rounded-[17px] font-courier">
-        <div className="container mx-auto flex items-center justify-between py-2 pl-4 pr-2">
-          <div className="flex items-center space-x-1">
+        <div className="container mx-auto flex items-center justify-between py-1 md:py-2 pl-3 md:pl-5 pr-2">
+          <div className="flex items-center space-x-2 md:space-x-3">
             {[acmLogo, mlscLogo].map((logo, index) => (
               <Link
                 key={index}
@@ -61,7 +61,7 @@ const Navbar = () => {
                 <img
                   src={logo}
                   alt={`Logo ${index}`}
-                  className="h-8 w-auto md:h-11"
+                  className="h-10 w-auto md:h-11"
                 />
               </Link>
             ))}
