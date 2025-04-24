@@ -40,7 +40,7 @@ const sponsors: SponsorProps[] = [
 
 const SponsorBox: React.FC<{ sponsor?: SponsorProps }> = ({ sponsor }) => {
   return (
-    <div className="border-4 border-[#B3A790] rounded-2xl h-44 md:h-52 md:w-56 flex items-center justify-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-[0_0_20px_rgba(179,167,144,0.5)] cursor-pointer">
+    <div className="border-4 border-[#B3A790] rounded-2xl h-36 md:h-52 md:w-56 flex items-center justify-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-[0_0_20px_rgba(179,167,144,0.5)] cursor-pointer">
       {sponsor ? (
         <a
           href={sponsor.url}
@@ -71,7 +71,7 @@ const SponsorsSection: React.FC = () => {
   return (
     <section className="relative flex flex-col items-center justify-center py-16 px-6 text-white">
       {/* Title */}
-      <h2 className="text-5xl md:text-6xl mb-16 font-coalition text-[#ffeed7]">SPONSORS</h2>
+      <h2 className="text-[44px] md:text-6xl mb-16 font-coalition text-[#ffeed7]">SPONSORS</h2>
 
       {/* Sponsors Grid */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-6xl">
