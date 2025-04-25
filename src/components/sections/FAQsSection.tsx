@@ -27,7 +27,7 @@ const FAQsSection: React.FC = () => {
     },
     {
       "question": "Are there prizes?",
-      "answer": "Yes! Top teams get cash, swag, and certificates. You'll also connect with professionals and showcase your skills."
+      "answer": "Yes! There are exciting prizes worth over ₹1 lakh, including swag, certificates, and other exciting rewards. You'll also connect with professionals and showcase your skills."
     },
     {
       "question": "How do I register?",

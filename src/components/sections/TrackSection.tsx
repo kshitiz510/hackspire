@@ -6,26 +6,33 @@ import TrackCard from "../common/TrackCard";
 const TracksSection: React.FC = () => {
   const tracks = [
     {
-      title: "Machine Learning",
-      description: "Build innovative solutions using artificial intelligence and machine learning to solve real-world problems.",
+      title: "Predictive Intelligence",
+      description:
+        "Leverage AI to build smart systems that predict trends, detect anomalies, and enable faster, smarter decisions in areas like disaster response, health, and safety.",
     },
     {
-      title: "Blockchain & Web3",
-      description: "Explore decentralized technologies and create applications leveraging blockchain and Web3 ecosystems.",
+      title: "FinTech & CyberSecurity",
+      description:
+        "Build resilient systems that redefine digital finance and security. From smart expense tools to cyber threat defense, empower users and startups with trust-first tech.",
     },
     {
-      title: "Healthcare & Wellness",
-      description: "Develop solutions to improve healthcare systems, mental health, and overall wellness using technology.",
+      title: "IoT & Automation",
+      description:
+        "Create connected systems that bridge the physical and digital worlds. Use sensors, automation, and real-time data to improve safety, health, and urban infrastructure.",
     },
     {
-      title: "Cyber Security",
-      description: "Design solutions to enhance digital security and protect systems from cyber threats and vulnerabilities.",
+      title: "Web3 & DApps",
+      description:
+        "Design decentralized applications that are transparent, secure, and community-driven. Embrace the future of ownership, governance, and value exchange using blockchain.",
     },
     {
       title: "Open Innovation",
-      description: "Bring your unique ideas to life with no restrictions—innovate in any domain you're passionate about.",
+      description:
+        "Think beyond the boundaries of domains. Bring bold, unconventional ideas to life with full creative freedom and make your own impact story.",
     },
   ];
+  
+  
 
   const [currentIndex, setCurrentIndex] = useState(2);
   const [isMobile, setIsMobile] = useState(false);
@@ -61,19 +68,19 @@ const TracksSection: React.FC = () => {
       className="relative flex flex-col items-center justify-center py-16 text-white overflow-hidden"
       {...swipeHandlers} // Attach swipe handlers to the section
     >
-      <h2 className="text-5xl md:text-6xl font-coalition mb-24 md:mb-16 text-[#ffeed7]">TRACKS</h2>
+      <h2 className="text-5xl md:text-6xl font-coalition mb-32 md:mb-16 text-[#ffeed7]">TRACKS</h2>
 
       {/* Carousel Container */}
       <div className="relative w-full flex items-center justify-center">
         {/* Scroll Buttons */}
         <button
-          className="absolute left-4 md:left-12 bg-[#B3A790] text-black p-2 rounded-full z-20"
+          className="absolute left-3 md:left-20 bg-[#B3A790] text-black p-2 rounded-full z-20"
           onClick={() => handleScroll("left")}
         >
           <ChevronLeft size={24} />
         </button>
         <button
-          className="absolute right-4 md:right-12 bg-[#B3A790] text-black p-2 rounded-full z-20"
+          className="absolute right-3 md:right-20 bg-[#B3A790] text-black p-2 rounded-full z-20"
           onClick={() => handleScroll("right")}
         >
           <ChevronRight size={24} />
